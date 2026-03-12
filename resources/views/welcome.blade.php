@@ -13,8 +13,7 @@
             :age="$animal->age"
             :description="$animal->description"
             :photo="$animal->photo"
-        >
-        </x-animal>
+        />
     @endforeach
 </div>
 @endsection

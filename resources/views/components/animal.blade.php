@@ -2,7 +2,7 @@
     <a href="animaux/{{ $id }}">
         <img src="{{ asset('images/animals/' . $photo) }}" alt="{{ $name }}">
     </a>
-    <p class="animal-name">{{ $name }}</p>
+    <h2 class="animal-name">{{ $name }}</h2>
     <p>Espèce : {{ $species }}</p>
     <p>Age : {{ $age }} ans</p>
     <p>{{ $description }}</p>
