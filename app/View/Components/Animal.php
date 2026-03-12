@@ -16,13 +16,15 @@ class Animal extends Component
     public $age;
     public $description;
     public $photo;
-    public function __construct($name, $species, $age, $description, $photo)
+    public $detailsRoute;
+    public function __construct($name, $species, $age, $description, $photo, $detailsRoute=null)
     {
         $this->name = $name;
         $this->species = $species;
         $this->age = $age;
         $this->description = $description;
         $this->photo = $photo;
+        $this->detailsRoute = $detailsRoute;
     }
 
     /**
