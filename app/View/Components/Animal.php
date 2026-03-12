@@ -11,20 +11,20 @@ class Animal extends Component
     /**
      * Create a new component instance.
      */
+    public $id;
     public $name;
     public $species;
     public $age;
     public $description;
     public $photo;
-    public $detailsRoute;
-    public function __construct($name, $species, $age, $description, $photo, $detailsRoute=null)
+    public function __construct($id, $name, $species, $age, $description, $photo, $detailsRoute=null)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->species = $species;
         $this->age = $age;
         $this->description = $description;
         $this->photo = $photo;
-        $this->detailsRoute = $detailsRoute;
     }
 
     /**

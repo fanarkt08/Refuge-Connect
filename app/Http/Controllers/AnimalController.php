@@ -8,15 +8,10 @@ use App\Models\Animal;
 class AnimalController extends Controller
 {
     public function display($id){
-        $animal = Animal::find($id);
-
-        if ($animal){
-            return view("pages.animal-details", [
-                'animal' => $animal
-            ]);
-        }
-        return redirect()->route('home');
-        
+        $animal = Animal::findOrFail($id);
+        return view("pages.animal-details", [
+            'animal' => $animal
+        ]);
     }
     public function create()
     {
@@ -32,24 +27,16 @@ class AnimalController extends Controller
     }
     public function edit($id)
     {
-        $animal = Animal::find($id);
-
-        if ($animal) {
-            $animal->name = $animal->name . ' modifié';
-            $animal->save();
-
-            return redirect()->route('home');
-        }
+        $animal = Animal::findOrFail($id);
+        $animal->name .= ' modifié';
+        $animal->save();
 
         return redirect()->route('home');
     }
     public function delete($id)
     {
-        $animal = Animal::find($id);
-        if ($animal) {
-            $animal->delete();
-            return redirect()->route('home');
-        }
+        $animal = Animal::findOrFail($id);
+        $animal->delete();
         return redirect()->route('home');
     }
 }

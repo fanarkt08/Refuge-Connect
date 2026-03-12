@@ -1,22 +1,13 @@
-@props(['name', 'species', 'age', 'description', 'photo', 'detailsRoute' => null])
-
-<article {{ $attributes }}>
-    @if($detailsRoute)
-        <a href="{{ $detailsRoute }}">
-            <img src="{{ asset('images/animals/' . $photo) }}" alt="{{ $name }}">
-        </a>
-    @endif
-
-    <h1>{{ $name }}</h1>
-    <div class="animal-info">
-        @if(!$detailsRoute)
-            <img src="{{ asset('images/animals/' . $photo) }}" alt="{{ $name }}">
-        @endif
-        <div>
-            <h5>Espèce : {{ $species }}</h5>
-            <h5>Age : {{ $age }}</h5>
-            <h5>{{ $description }}</h5>
-        </div>
-        {{ $slot }}
+<article {{ $attributes }}> 
+    <a href="animaux/{{ $id }}">
+        <img src="{{ asset('images/animals/' . $photo) }}" alt="{{ $name }}">
+    </a>
+    <p class="animal-name">{{ $name }}</p>
+    <p>Espèce : {{ $species }}</p>
+    <p>Age : {{ $age }} ans</p>
+    <p>{{ $description }}</p>
+    <div class="animal-actions">
+        <a href="{{ route('animals.edit', $id) }}"><p>Modifier</p></a>
+        <a href="{{ route('animals.delete', $id) }}"><p>Supprimer</p></a>
     </div>
 </article>

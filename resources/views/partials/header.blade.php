@@ -5,10 +5,10 @@
 
     <nav>
         <a href="/">
-            <h3>Accueil</h3>
+            <p>Accueil</p>
         </a>
         <a href="{{ route('animals.create') }}">
-            <h3>Ajouter un animal</h3>
+            <p>Ajouter un animal</p>
         </a>
     </nav>
 </header>

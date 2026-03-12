@@ -16,5 +16,5 @@ Route::prefix('animaux')->name('animals.')->group(function () {
 });
 
 Route::fallback(function () {
-    return view('error.not-found');
+    return view('errors.404');
 });
