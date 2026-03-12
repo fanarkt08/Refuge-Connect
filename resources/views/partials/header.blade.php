@@ -1,10 +1,10 @@
 <header>
-    <a href="/">
+    <a href="{{ route('home') }}">
         <img src="{{ asset('images/logo.png') }}" alt="Refuge Connect" class="logo">
     </a>
 
     <nav>
-        <a href="/">
+        <a href="{{ route('home') }}">
             <p>Accueil</p>
         </a>
         <a href="{{ route('animals.create') }}">

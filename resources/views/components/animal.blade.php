@@ -1,5 +1,5 @@
 <article {{ $attributes }}> 
-    <a href="animaux/{{ $id }}">
+    <a href="{{ route('animals.details', $id) }}">
         <img src="{{ asset('images/animals/' . $photo) }}" alt="{{ $name }}">
     </a>
     <h2 class="animal-name">{{ $name }}</h2>
